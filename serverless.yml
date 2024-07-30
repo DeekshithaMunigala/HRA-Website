@@ -1,0 +1,17 @@
+service: hra-website
+
+provider:
+  name: aws
+  region: ap-south-1
+
+plugins:
+  - serverless-lift
+
+constructs:
+  landing:
+    type: single-page-app
+    path: build
+    domain:
+      - www.hrasolutions.in
+      - hrasolutions.in
+    certificate: arn:aws:acm:us-east-1:861513610293:certificate/2fbe23c3-93d1-4be9-b9bd-745ddcef7441

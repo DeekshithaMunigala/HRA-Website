@@ -1,0 +1,50 @@
+.bg-color {
+  background-color: #eaf5fe;
+}
+
+.circle-icon {
+  background: #ffc0c0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+  vertical-align: middle;
+  padding: 30px;
+  display: flex;
+}
+
+.contact-button {
+  min-width: 250px;
+  margin-top: 10px;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.3s ease-out forwards;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.3s ease-out forwards;
+}
