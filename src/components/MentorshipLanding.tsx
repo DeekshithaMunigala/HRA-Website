@@ -36,6 +36,7 @@ const MentorshipLanding = () => {
         width: "100%",
         background: "linear-gradient(to right, #eaf5fe, #F0F0F0, #eaf5fe)",
         padding: "30px 0 40px",
+        boxSizing: "border-box",
       }}
     >
       <Container
@@ -46,16 +47,23 @@ const MentorshipLanding = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          boxSizing: "border-box",
         }}
       >
         <Box textAlign="center">
           <Typography
             variant="h3"
             component="h1"
-            className="sm:text-[60px] text-[36px]"
             sx={{
               fontWeight: "semi-bold",
               color: "#272727",
+              fontSize: {
+                xs: "36px",
+                sm: "60px",
+                md: "60px",
+                lg: "60px",
+                xl: "60px",
+              },
               letterSpacing: "-3px",
             }}
           >
@@ -64,12 +72,18 @@ const MentorshipLanding = () => {
           <Typography
             variant="h3"
             component="h1"
-            className="sm:text-[64px] text-[40px]"
             sx={{
               fontStyle: "italic",
               fontFamily: "instrument-seriff",
               color: "#007AFF",
               margin: "0.5rem 0 0",
+              fontSize: {
+                xs: "40px",
+                sm: "64px",
+                md: "64px",
+                lg: "64px",
+                xl: "64px",
+              },
               letterSpacing: "-3px",
             }}
           >
@@ -77,8 +91,12 @@ const MentorshipLanding = () => {
           </Typography>
           <Typography
             variant="body1"
-            className="mt-4 mb-6 sm:text-[18px] text-[16px]"
-            sx={{ margin: "20px", color: "#5C5C5C" }}
+            className="mt-4 mb-6"
+            sx={{
+              margin: "20px",
+              color: "#5C5C5C",
+              fontSize: { xs: "16px", sm: "17px", md: "18px", lg: "18px" },
+            }}
           >
             Land your dream job, role, and company faster than ever with 1:1
             long term mentorship.
@@ -95,6 +113,7 @@ const MentorshipLanding = () => {
                 "&:hover": {
                   backgroundColor: "#ffffff",
                 },
+                width: { xs: "100%", sm: "auto" },
               }}
             >
               <Typography className={"px-4 py-1"}>Book a free trial</Typography>
@@ -112,6 +131,7 @@ const MentorshipLanding = () => {
                 backgroundColor: "black",
               },
               ...styles.findMentorButton,
+              width: { xs: "100%", sm: "auto" },
             }}
           >
             <Typography className={"px-4 py-1 flex items-center"}>
@@ -148,32 +168,43 @@ const MentorshipLanding = () => {
           ))}
         </Grid>
 
-        <div className="mt-6 flex justify-center items-center w-[80%] gap-10 sm:flex-row flex-col">
-          <div className="flex justify-center items-center">
+        <Box
+          sx={{
+            mt: 6,
+            display: { xs: "none", sm: "flex" },
+            justifyContent: "center",
+            alignItems: "center",
+            width: "80%",
+            maxWidth: "100%",
+            gap: 10,
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center" }}>
             <img
               src={VerifiedIcon}
-              className=" h-5 w-5 mr-2"
+              className="h-5 w-5 mr-2"
               alt="verified-icon"
             />
-            <p>No Payment Required</p>
-          </div>
-          <div className="flex justify-center items-center">
+            <Typography>No Payment Required</Typography>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
             <img
               src={VerifiedIcon}
-              className=" h-5 w-5 mr-2"
+              className="h-5 w-5 mr-2"
               alt="verified-icon"
             />
-            <p>Verified Mentors Only</p>
-          </div>
-          <div className="flex justify-center items-center">
+            <Typography>Verified Mentors Only</Typography>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
             <img
               src={VerifiedIcon}
-              className=" h-5 w-5 mr-2"
+              className="h-5 w-5 mr-2"
               alt="verified-icon"
             />
-            <p>Reschedule Anytime</p>
-          </div>
-        </div>
+            <Typography>Reschedule Anytime</Typography>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
